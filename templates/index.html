@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spotify Integration</title>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<h1>Spotify Integration</h1>
+
+<button id="spotify-login-btn">Login with Spotify</button>
+
+<!-- Your other HTML content goes here -->
+
+<!-- Include your JavaScript files -->
+<script src="authorization.js"></script>
+<script src="favorite-tracks-artists.js"></script>
+<script src="play-pause-spotify.js"></script>
+<script src="spotify-playback-setup.js"></script>
+
+<script>
+    // This script could be used to trigger the authorization process on button click
+    $(document).ready(function() {
+        $('#spotify-login-btn').on('click', function() {
+            // Make an AJAX request to the Flask endpoint '/authorize' when the button is clicked
+            $.ajax({
+                url: '/authorize',
+                type: 'GET',
+                success: function(response) {
+                    // Handle success, if needed
+                },
+                error: function(err) {
+                    // Handle error, if needed
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
+
